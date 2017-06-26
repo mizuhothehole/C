@@ -1,0 +1,32 @@
+Inter and show out in terminal
+
+#include<stdio.h>
+int main(){
+	int plus(int m,int b);
+	int div(int a,int b);
+	char i;
+	int j;
+	printf("hello.world\n");
+	printf("plus function %d\n", plus(30,5));
+	printf("div function %d\n", div(30,5));
+	
+	
+	scanf("%s", &i);
+	scanf("%d",&j);
+	
+	printf("%c\r\n",i);
+	printf("%d",j);
+	return 0;
+}
+
+int plus(int a, int b){
+	int c;
+	c = a+b;
+	return c;
+}
+
+int div(int a, int b){
+	int c;
+	c = a/b;
+	return c;
+}
