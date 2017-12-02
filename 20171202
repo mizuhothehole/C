@@ -1,0 +1,50 @@
+Trying to code a C command application in XCode
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    // insert code here...
+    printf("Hello, World!\n");
+    int8_t i;
+    int16_t ii;
+    ii = 60;
+    i = 22;
+    char b = 'c';
+    printf("%d",b);
+    printf("%hhd",i);
+    printf("%hd",ii);
+    return 0;
+}
+
+Under here are some data types of C:
+int8_t;
+int16_t;
+int32_t;
+int64_t;
+
+All these are having the 8byte, 16byte,32byte or 64byte;
+So as to change them to a certain format, here are what I used.
+%d
+%hd
+%hhd -> to let anything changed to a kind of char.
+
+Here is from the web:
+
+https://webkaru.net/clang/printf-format-specifiers/:
+
+[修飾子]変換指定子	変数の型	概要
+%c	char	文字
+%s	char *	文字列
+%d	int	10進整数
+%hd	short int	半分の精度の10進整数
+%ld	long int	倍精度の10進整数
+%u	unsigned int	符号なし10進整数
+%hu	unsigned short int	符号なし半分の精度の10進整数
+%lu	unsigned long int	符号なし倍精度の10進整数
+%o	int	8進整数
+%x	int	16進整数
+%f	float	実数
+%lf	double	倍精度の実数
+%e	float	実数の指数表示
+%g	float	実数の最適表示
+
