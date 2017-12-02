@@ -48,3 +48,48 @@ https://webkaru.net/clang/printf-format-specifiers/:
 %e	float	実数の指数表示
 %g	float	実数の最適表示
 
+Here is something I never saw before.
+What are these?
+My god.
+
+Test`main:
+    0x100000ed0 <+0>:   pushq  %rbp
+    0x100000ed1 <+1>:   movq   %rsp, %rbp
+    0x100000ed4 <+4>:   subq   $0x40, %rsp
+    0x100000ed8 <+8>:   leaq   0xaf(%rip), %rax          ; "Hello, World!\n"
+    0x100000edf <+15>:  movl   $0x0, -0x4(%rbp)
+    0x100000ee6 <+22>:  movl   %edi, -0x8(%rbp)
+    0x100000ee9 <+25>:  movq   %rsi, -0x10(%rbp)
+    0x100000eed <+29>:  movq   %rax, %rdi
+    0x100000ef0 <+32>:  movb   $0x0, %al
+    0x100000ef2 <+34>:  callq  0x100000f6c               ; symbol stub for: printf
+    0x100000ef7 <+39>:  leaq   0x9f(%rip), %rdi          ; "%d"
+    0x100000efe <+46>:  movl   $0x1bc, -0x18(%rbp)       ; imm = 0x1BC 
+    0x100000f05 <+53>:  movw   $0x3c, -0x14(%rbp)
+    0x100000f0b <+59>:  movb   $0x16, -0x11(%rbp)
+    0x100000f0f <+63>:  movb   $0x63, -0x21(%rbp)
+    0x100000f13 <+67>:  movsbl -0x21(%rbp), %esi
+    0x100000f17 <+71>:  movl   %eax, -0x28(%rbp)
+    0x100000f1a <+74>:  movb   $0x0, %al
+    0x100000f1c <+76>:  callq  0x100000f6c               ; symbol stub for: printf
+    0x100000f21 <+81>:  leaq   0x78(%rip), %rdi          ; "%hhd"
+    0x100000f28 <+88>:  movsbl -0x11(%rbp), %esi
+    0x100000f2c <+92>:  movl   %eax, -0x2c(%rbp)
+    0x100000f2f <+95>:  movb   $0x0, %al
+    0x100000f31 <+97>:  callq  0x100000f6c               ; symbol stub for: printf
+    0x100000f36 <+102>: leaq   0x68(%rip), %rdi          ; "%hd"
+    0x100000f3d <+109>: movswl -0x14(%rbp), %esi
+    0x100000f41 <+113>: movl   %eax, -0x30(%rbp)
+    0x100000f44 <+116>: movb   $0x0, %al
+    0x100000f46 <+118>: callq  0x100000f6c               ; symbol stub for: printf
+    0x100000f4b <+123>: leaq   0x4b(%rip), %rdi          ; "%d"
+->  0x100000f52 <+130>: movl   -0x18(%rbp), %esi
+    0x100000f55 <+133>: movl   %eax, -0x34(%rbp)
+    0x100000f58 <+136>: movb   $0x0, %al
+    0x100000f5a <+138>: callq  0x100000f6c               ; symbol stub for: printf
+    0x100000f5f <+143>: xorl   %esi, %esi
+    0x100000f61 <+145>: movl   %eax, -0x38(%rbp)
+    0x100000f64 <+148>: movl   %esi, %eax
+    0x100000f66 <+150>: addq   $0x40, %rsp
+    0x100000f6a <+154>: popq   %rbp
+    0x100000f6b <+155>: retq   
