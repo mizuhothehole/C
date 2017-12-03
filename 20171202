@@ -136,3 +136,7 @@ the result is:
 Hello, World!
 33660x7fff5fbff73c/n0x7fff5fbff738/n33/n3333/nProgram ended 
 
+可以看到这里面，两个int类型的数据存储的位置是
+
+0x7fff5fbff73c
+0x7fff5fbff738
