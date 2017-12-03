@@ -93,3 +93,46 @@ Test`main:
     0x100000f66 <+150>: addq   $0x40, %rsp
     0x100000f6a <+154>: popq   %rbp
     0x100000f6b <+155>: retq   
+
+
+
+#include <stdio.h>
+
+int makelove(int a, int b) {
+    return (a + b);
+}
+
+int makepoint(int *a, int *b){
+    int c = *a;
+    int d = *b;
+    return (c+d);
+}
+
+int main(int argc, const char * argv[]) {
+    // insert code here...
+    printf("Hello, World!\n");
+    int m;
+    m = 33;
+    int n;
+    n = 3333;
+    int d3;
+    d3 = makelove(m,n);
+    printf("%d",d3);
+    
+    int *pta=&m;
+    int *ptb=&n;
+    
+    printf("%p/n",pta);
+    printf("%p/n",ptb);
+    
+    printf("%d/n",*pta);
+    printf("%d/n",*ptb);
+    
+    return 0;
+}
+
+the result is:
+
+Hello, World!
+33660x7fff5fbff73c/n0x7fff5fbff738/n33/n3333/nProgram ended 
+
