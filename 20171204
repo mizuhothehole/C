@@ -1,0 +1,29 @@
+C size of and define of string
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    char ck[] = {'h','e','l','l','o'};
+    char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+    printf("Hello, World!\n");
+    printf("%s",ck);
+    printf("%s",greeting);
+    int a = sizeof(int);
+    int b = sizeof(int64_t);
+    int c = sizeof(unsigned);
+    int d = sizeof(short);
+    int e = sizeof(int8_t);
+    int f = sizeof(ck);
+    int g = sizeof(greeting);
+    printf("%u",a);
+    printf("%u",b);
+    printf("%u",c);
+    printf("%u",d);
+    printf("%u",e);
+    printf("%u",f);
+    printf("%u",g);
+    return 0;
+}
+
+在 C 语言中，字符串实际上是使用 null 字符 '\0' 终止的一维字符数组。因此，一个以 null 结尾的字符串，包含了组成字符串的字符。
+sizeof函数，返回的是一个类型的长度或者是一个表达式的长度。 
