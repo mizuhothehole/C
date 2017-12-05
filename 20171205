@@ -1,0 +1,12 @@
+C 语言中的字符串
+
+C语言中字符串的定义就是一个结尾为/0,意思是null character的char 的配列。
+为了定义字符串，可以写成 char str [20] 这样子。
+
+string 有很多函数在标准库里。
+strcpy a,b 这个可以把b拷贝到a里面去。
+strcat A，B 这个可以把B衔接到A后面
+strlen 这个返回字符串长度
+strcmp A，B 这个是进行两个字符串的比较。如果一模一样的话返回0。否则根据两者大小返回正数或者负数
+strchr str，chr 这个是找到str里面chr的位置的内存指针
+strstr 这是找到str里面的str位置的内存指针。
