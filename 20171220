@@ -1,0 +1,112 @@
+.H file
+
+#include <stdio.h>
+#include "test.h"
+#include "woquhaowana.h"
+
+int main(int argc, const char * argv[]) {
+
+    int hh;
+    hh = adder();
+    printf("%u",hh);
+    int cc;
+    cc = hahahaowan();
+    printf("%u",cc);
+    return 0;
+}
+
+#include "test.h"
+
+int adder(){
+    return 22;
+}
+
+#ifndef test_h
+#define test_h
+
+#include <stdio.h>
+int adder();
+#endif /* test_h */
+
+#include "woquhaowana.h"
+#include "test.h"
+int hahahaowan(){
+    return adder();
+}
+
+#ifndef woquhaowana_h
+#define woquhaowana_h
+
+#include <stdio.h>
+int hahahaowan();
+#endif /* woquhaowana_h */
+
+2222Program ended with exit code: 0
+
+这是C语言里面的头文件的使用
+
+T这个是Xcode的数据类型
+F这个是函数的意思
+#这个是?
+
+关于C里面的命令行工具的写法
+#include <stdio.h>
+void main(int argc,char *argv[]) //命令行参数
+{
+    int ch;//定义文件类型指针
+    FILE *fp;//判断命令行是否正确
+    if(argc!=3)
+    {
+        printf("Error format,Usage: display filename1\n");
+        return; //键入了错误的命令行，结束程序的执行
+    }
+    //按读方式打开由argv[1]指出的文件
+    if((fp=fopen(argv[2],"r"))==NULL)
+    {
+        printf("The file <%s> can not be opened.\n",argv[1]);//打开操作不成功
+        return;//结束程序的执行
+    }
+    //成功打开了argv[1]所指文件
+    ch=fgetc(fp); //从fp所指文件的当前指针位置读取一个字符
+    while(ch!=EOF) //判断刚读取的字符是否是文件结束符
+    {
+        putchar(ch); //若不是结束符，将它输出到屏幕上显示
+        ch=fgetc(fp); //继续从fp所指文件中读取下一个字符
+    } //完成将fp所指文件的内容输出到屏幕上显示
+    fclose(fp); //关闭fp所指文件
+}
+
+argc这个是命令的个数的总数。
+argv这个是每个命令的意思。
+
+Last login: Wed Dec 20 06:22:26 on console
+ishiiryounoAir:~ ishiiaya$ cd Users/ishiiaya/Library/Developer/Xcode/DerivedData/CommandLineTool-evyahouqjghkhpglmlovhsjfcgvv/Build/Products/Debug/
+-bash: cd: Users/ishiiaya/Library/Developer/Xcode/DerivedData/CommandLineTool-evyahouqjghkhpglmlovhsjfcgvv/Build/Products/Debug/: No such file or directory
+ishiiryounoAir:~ ishiiaya$ cd /Users/ishiiaya/Library/Developer/Xcode/DerivedData/CommandLineTool-evyahouqjghkhpglmlovhsjfcgvv/Build/Products/Debug/
+ishiiryounoAir:Debug ishiiaya$ ls
+CommandLineTool
+ishiiryounoAir:Debug ishiiaya$ ./CommandLineTool r
+The file <r> can not be opened.
+ishiiryounoAir:Debug ishiiaya$ ls
+CommandLineTool
+ishiiryounoAir:Debug ishiiaya$ vim xxx
+ishiiryounoAir:Debug ishiiaya$ ls
+CommandLineTool	xxx
+ishiiryounoAir:Debug ishiiaya$ ./CommandLineTool xxx 
+cnscniscnascna";+*sxxewx>?.,:;!"#$%&'(QWER+*?>;axasxxsaxax::::a:
+ishiiryounoAir:Debug ishiiaya$ ./CommandLineTool x xxx 
+Error format,Usage: display filename1
+ishiiryounoAir:Debug ishiiaya$ ./CommandLineTool x,xxx 
+The file <x,xxx> can not be opened.
+ishiiryounoAir:Debug ishiiaya$ ./CommandLineTool xxx 
+The file <xxx> can not be opened.
+ishiiryounoAir:Debug ishiiaya$ ls
+CommandLineTool	xxx
+ishiiryounoAir:Debug ishiiaya$ ./CommandLineTool x xxx 
+Error format,Usage: display filename1
+ishiiryounoAir:Debug ishiiaya$ ./CommandLineTool x xxx 
+cnscniscnascna";+*sxxewx>?.,:;!"#$%&'(QWER+*?>;axasxxsaxax::::a:
+ishiiryounoAir:Debug ishiiaya$ ./CommandLineTool x xxx 
+cnscniscnascna";+*sxxewx>?.,:;!"#$%&'(QWER+*?>;axasxxsaxax::::a:
+ishiiryounoAir:Debug ishiiaya$ ./CommandLineTool x xxx 
+
