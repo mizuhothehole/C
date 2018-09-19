@@ -1,0 +1,29 @@
+Hello, Dcoder!23423
+jghk
+
+#include <iostream>
+// #include <cstdint>
+using namespace std;
+ //Compiler version g++ 6.3.0
+
+ int main()
+ {
+ 	cout << "Hello, Dcoder!";
+ 	int32_t a = 23;
+ 	cout << a;
+ 	cout << sizeof(a) << a << std::endl;
+ 	char ss[55];
+ 	cin >> ss;
+ 	cout << ss;
+ }
+ 
+ three big changes on cpp
+ 
+ 1.all the header files are changed to xxx rather 
+ than xxx.h
+ 
+ 2.all the c standard headers are changed to cxxx。
+ for example， cstdio
+ 
+ 3.now std：：endl，something like this is used to show
+ the usage of a namespace
