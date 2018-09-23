@@ -1,0 +1,136 @@
+write a compiler called qinc.exe
+
+#include <iostream>
+#include <string>
+#include <map>
+#include <fstream>
+#include <vector>
+#include <sstream>
+#define DUPLICATED_QIN (-100)
+#define QIN_ERROR_VALUE_DEFINE (-200)
+#define NOT_QIN_FILE (-300)
+#define LEFT_BRACKET string("(");
+#define RIGHT_BRACKET string(")");
+
+using namespace std;
+
+// spilt string to vector by delimiter
+vector<string> split(const string& s,char delim) {
+	vector<string> elems;
+	stringstream ss(s);
+	string item;
+	while (getline(ss, item, delim)) {
+		if (!item.empty()) {
+			elems.push_back(item);
+		}
+	}
+	return elems;
+}
+
+// find qin value by qin name
+int findQinVal(const string& qin, const string& line) {
+	string brachetl = LEFT_BRACKET;
+	string brachetr = RIGHT_BRACKET;
+	string allstr(brachetl.append(qin).append(brachetr));
+	cout << "try to find: " << allstr << " in: " << line << endl;
+	string::size_type position = line.find(allstr);
+	cout << "position is found:" << position << endl;
+	string lmark = string("[");
+	string rmark = string("]");
+	string::size_type positionl = line.find(lmark, position);
+	string::size_type positionr = line.find(rmark, position);
+	if (positionr == string::npos || positionl == string::npos) {
+		cout << "please give qin a value using []" << endl;
+		std::exit(QIN_ERROR_VALUE_DEFINE);
+	}
+	cout << "value position left is found:" << positionl << endl;
+	cout << "value position right is found:" << positionr << endl;
+	string subed = line.substr(positionl + 1, positionr - positionl - 1);
+	cout << "value string is:" << subed << endl;
+	return std::stoi(subed);
+}
+
+// compiler main
+int main(int argc, char* args[]){
+cout << "compiling..." << endl;
+
+// read path
+string path(args[1]);
+
+// check if file is of .qin extension
+string qinext = ".qin";
+string subedfilename = path.substr(path.length() - 4);
+if (0 != qinext.compare(subedfilename)) {
+	cout << "this compiler could only compile .qin file.";
+	std::exit(NOT_QIN_FILE);
+}
+
+cout << "arguments outputing" << endl;
+cout << "compiler executable is:" << args[0] << endl;
+cout << "compiled file is:" << args[1] << endl;
+ifstream in(path);
+
+// read line by line
+string line;
+	if (in) {
+		int linenum = 1;
+		while (getline(in, line))
+		{
+			map<string, int> valmap;
+			cout << "compiling line:" << linenum << endl;
+			cout << "compiled line:" << line << endl;
+			vector<string> splitedVector1;
+			vector<string> splitedVector2;
+			splitedVector1 = split(line, '(');
+			for (size_t i = 0; i < splitedVector1.size(); i++)
+			{
+				splitedVector2.push_back(split(splitedVector1.at(i), ')').at(0));
+			}
+			for (size_t i = 0; i < splitedVector2.size(); i++)
+			{
+				cout << "found qin declared:" << splitedVector2.at(i) << endl;
+			}
+			// check if same qin is declared in same line
+			for (size_t i = 0; i < splitedVector2.size(); i++)
+			{	
+				cout << "searching same qin name of:" << splitedVector2.at(i) << endl;
+				for (size_t j = i + 1; j < splitedVector2.size(); j++) {
+					cout << "comparing qin name:" << splitedVector2.at(j) << endl;
+					cout << "comparing qin name:" << splitedVector2.at(i) << endl;
+					cout << "comparing result:" << (splitedVector2.at(j)).compare(splitedVector2.at(i)) << endl;
+					if (0 == (splitedVector2.at(j)).compare(splitedVector2.at(i))) {
+						cout << "same qin is declared in the same line:" << splitedVector2.at(j) << endl;
+						std::exit(DUPLICATED_QIN);
+					}
+				}
+			}
+			for (size_t i = 0; i < splitedVector2.size(); i++)
+			{	
+				int valuedef = findQinVal(splitedVector2.at(i), line);
+				cout << "value define is found:" << valuedef << endl;
+				valmap.insert(pair<string, int>(splitedVector2.at(i), valuedef));
+				map<string, int>::iterator itr;
+				for (itr = valmap.begin(); itr != valmap.end();itr++) {
+					cout << "key is: " << itr->first << ", value is: " << valmap[itr->first] << endl;
+				}
+			}
+		}
+		in.close();
+	}
+	else {
+		cout << "could not read file, please check the path.";
+	}
+char compiled[] = {'t','e','s','t'};
+cout << "compiled," << "output file is ";
+	for (size_t i = 0; i < size(compiled); i++)
+	{
+		cout << compiled[i];
+	}
+	cout << endl;
+	string sss("test spilt string");
+	vector<string> s = split(sss, ' ');
+	for (size_t i = 0; i < s.size(); i++)
+	{
+		cout << s.at(i) <<endl;
+	}
+}
