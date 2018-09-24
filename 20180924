@@ -1,0 +1,57 @@
+class define and usage in cpp
+
+#include <iostream>
+// #include <cstdint>
+using namespace std;
+ //Compiler version g++ 6.3.0
+
+class mmm {
+	private:
+	int a;
+	public:
+	int showa(int s);
+	
+	mmm();
+	
+};
+
+int mmm::showa(int s){
+	cout<<	"output is"<<this->a;
+	return	0;
+};
+
+mmm::mmm(){
+	this->a=4;
+};
+struct kk {
+	int kl;
+};
+
+struct ms {
+	int msia;
+	int msib;
+	int msic;
+	int mmm;
+	int * mk;
+	kk * lm;
+};
+
+ int main()
+ {
+ 	ms qinc;
+ 	cout << sizeof(qinc);
+ 	qinc.msia=66;
+ 	qinc.mk=&qinc.msia;
+ 	cout << qinc.msia <<endl;
+ 	cout << *qinc.mk << endl;
+ 	ms * qq;
+ 	kk * temp;
+ 	qq->msia=55;
+ 	qq->lm=temp;
+ 	temp->kl=90;
+ 	cout << qq->msia<<endl;
+ 	cout << qq->lm->kl;
+ 	mmm mins;
+ 	mins.showa(3);
+ }
+    
