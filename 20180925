@@ -147,3 +147,36 @@ virtual method overrided!
 ...Program finished with exit code 0                                                                                
 
 Press ENTER to exit console.  
+
+#include <iostream>
+#include <stack>
+using namespace std;
+
+bool isEmpty(std::stack<int>*  s) {
+       if(s->empty()){
+        cout << "the stack is empty" << endl;
+        return true;
+    } else {
+        cout << "the stack is not empty" << endl;
+        return false;
+    } 
+}
+
+int main()
+{
+    
+    stack<int> s;
+    isEmpty(&s);
+    s.push(0);
+    cout<<"Hello World" << s.top() << endl;
+    isEmpty(&s);
+
+    return 0;
+}
+
+------------------------------------------------------------
+output log:
+
+the stack is empty                                                                                                                    
+Hello World0                                                                                                                          
+the stack is not empty
