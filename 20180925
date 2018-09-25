@@ -148,6 +148,9 @@ virtual method overrided!
 
 Press ENTER to exit console.  
 
+-----------------------------------------------------------------------
+6. trying to use stack:
+
 #include <iostream>
 #include <stack>
 using namespace std;
@@ -180,3 +183,6 @@ output log:
 the stack is empty                                                                                                                    
 Hello World0                                                                                                                          
 the stack is not empty
+
+and there happened a error like: "missing template argument”.
+It means we have to use stack<int> or something rather than using the stack directly.
