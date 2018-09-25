@@ -1,0 +1,38 @@
+cpp learning of this morning
+
+1.cpp has the constructor like:
+
+class A {
+
+private:
+int a;
+
+protected:
+  int getA(){
+    return this->a;
+  }
+
+public:
+  A(){
+    this->a=222;
+  }
+  
+  virtual void ToBeOverridedMethod();
+  
+  ~A(){
+    cout << "the class is now over!" << endl;
+  }
+
+}
+
+in this class defination, the "this" syntax means the pointer of this class itself. The point is that, it is a "pointer".
+
+2. cpp also has the destructor, but like above.
+
+3. to announce a class that could be overrided, we MUST announce a method like virtual MethodName.
+Like in the sample the "virtual void ToBeOverridedMethod()".
+
+4. To extend a class, in cpp we use ":". Something like A:public B. I saw a lot of samples and they always use the "public"
+brfore the class extended.
+
+5. Even the basic data types, if we use the "&", we also could change the value of it even in method, because it is passing the "real value".
