@@ -36,3 +36,49 @@ Like in the sample the "virtual void ToBeOverridedMethod()".
 brfore the class extended.
 
 5. Even the basic data types, if we use the "&", we also could change the value of it even in method, because it is passing the "real value".
+
+samples:
+
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    class A {
+        public:
+            void virtual MethodForOverride(){
+        }
+    };
+    
+    class B:public A {
+        public:
+             virtual void MethodForOverride(){
+                 cout << "virtual method overrided!" << endl;
+             }
+    };
+    
+    cout<<"Hello World";
+    B b;
+    b.MethodForOverride();
+    return 0;
+}
+
+Hello Worldvirtual method overrided!                                                                                
+
+                                                                                                                    
+
+                                                                                                                    
+
+...Program finished with exit code 0                                                                                
+
+Press ENTER to exit console.    
+
