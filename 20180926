@@ -1,0 +1,48 @@
+C++ matcher and regex define and the usage
+
+Sample:
+
+#include <iostream>
+#include <regex>
+
+using namespace std;
+
+int main()
+{
+    string str("{dsa43214Adc414}-");
+    
+    // define regex and matcher
+    regex re("\\{[a-zA-Z0-9]+\\}-+");
+    smatch mat;
+    
+    if(regex_search(str, mat, re)){
+        for ( int j = 0; j < mat.size(); ++j ){
+            std::cout << mat[j] << endl;
+        }
+    } else{
+        cout<<"No matched item found.";
+    }
+    
+    if(regex_match(str, mat, re)){
+        for ( int j = 0; j < mat.size(); ++j ){
+            std::cout << mat[j] << endl;
+        }
+    } else{
+        cout<<"Total string is not matching regex.";
+    }
+    
+    cout<<"Hello World";
+
+    return 0;
+}
+
+Matcher in cpp: std::smatch
+Regex in cpp: std::regex
+
+methods used in cpp:
+regex_search(string, matcher, regex)
+-> to find if there is any matching using the defined regex in this string.
+regex_match(string, matcher, regex)
+-> to judge if the whole string is matching this regex.
+
+BY THE WAY, In java, it is called the java.util.Pattern and the java.util.Matcher
