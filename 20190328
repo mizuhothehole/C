@@ -1,0 +1,55 @@
+-------------------------------------------------------------------------
+//
+// Created by me on 2019/03/28.
+//
+
+#include <jni.h>
+#include <string>
+#include "my_functions.h"
+
+extern "C"
+JNIEXPORT jstring
+
+JNICALL
+Java_com_example_ishiiaya_myapplication_MainActivity_stringFromJNI(
+        JNIEnv *env,
+        jobject /* this */) {
+    std::string hello = "Hello from C++";
+    kill();
+    birth();
+    return env->NewStringUTF(hello.c_str());
+}
+-------------------------------------------------------------------------
+//
+// Created by me on 2019/03/28.
+//
+
+#ifndef MYAPPLICATION4_MY_FUNCTIONS_H
+#define MYAPPLICATION4_MY_FUNCTIONS_H
+
+void kill ();
+
+void birth();
+
+#endif //MYAPPLICATION4_MY_FUNCTIONS_H
+
+
+-------------------------------------------------------------------------
+//
+// Created by me on 2019/03/28.
+//
+
+void kill() {
+
+};
+
+
+-------------------------------------------------------------------------
+//
+// Created by me on 2019/03/28.
+//
+
+void birth() {
+
+}
+-------------------------------------------------------------------------
