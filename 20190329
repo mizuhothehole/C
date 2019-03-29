@@ -1,0 +1,37 @@
+C features
+
+1. *void
+This means a pointer of any kinds of point
+
+2. (*test)(int,int)
+
+This is a function pointer.
+
+How to use:
+(*test)(int,int) is just an announcement.
+To use it, define it like
+test = func1;
+test = func2; // however this
+
+then call it with parameter values:
+test(1,2);     // however this is wrong
+test(123,456); // however this is wrong
+
+and this will get the return value or just let cpu do something.
+
+When it is announced in function like:
+void doSome(char a, char b, (*test)(const char*, const char*))
+
+It means doSome method allows to pass a function pointer into it.
+So we combine 2 and 3, we shall call like:
+
+doSome('a', 'b', test);
+
+But how to define doSome function?
+They say (*test)(1 ,2) is the best but what is it in 2???
+
+I am sure 2 is wrong, because when we want call function we must first get 
+its position in memory by (*). And then call the parameters.
+So 2 is wrong, we must call like:
+(*test)(1,2);     // however this is OK
+(*test)(123,456); // however this is OK
