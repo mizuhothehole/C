@@ -20,3 +20,29 @@ struct _Packed myStruct{
 
 unsigned aaa：3；
 这样的意思是aaa有三个bit大小。也就是八分之一byte乘以3
+
+c的标准库
+
+今天去图书馆看了看东西，结果发现了一本c的参考书。
+里面我见到了两个库。
+一个是ctype.h
+
+isalnum 这个用来检查是不是字母和数字
+isalpha 检查是不是字母
+iscntrl 检查是不是控制字符
+isdigit 检查是不是10进制数组
+isgraph 检查是不是图形（除了空格之外的可见的）
+isslower 检查是不是小写字母
+isprint 检查是不是可打印字符（可见的，包括空格）
+ispunct 检查是不是标点符号字符
+isspace 检查是不是空白字符
+isupper 检查是不是大写
+isxdigit 检查是不是16进制数字
+
+stdlib这个库
+atof 变成浮点数
+atoi 变成整数
+atol 变成长整数
+strtod 变成浮点数
+strtol 变成长整数
+strtoul 变成无符号长整数
