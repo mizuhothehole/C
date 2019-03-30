@@ -35,3 +35,5 @@ its position in memory by (*). And then call the parameters.
 So 2 is wrong, we must call like:
 (*test)(1,2);     // however this is OK
 (*test)(123,456); // however this is OK
+
+_Packed 这个是用来字节对其的
