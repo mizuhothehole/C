@@ -28,3 +28,7 @@ LANG < LC_* < LC_ALL
 可是调用assert会相当的影响性能。
 因此在调试完成之后，在#include <assert.h>的前面，可以添加#define NDEBUG防止性能低下。
 
+✨c语言的float.h以及limit.h
+这两个标准库里面定义了很多常量宏
+其中float.h里面定义的是关于float的常量
+limit.h则是定义的关于float之外的常量。
