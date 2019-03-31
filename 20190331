@@ -1,4 +1,4 @@
-c语言的union
+✨c语言的union
 
 这个叫做c语言联合体。
 
@@ -12,10 +12,19 @@ double b;
 
 改变a的值会影响b的值，改变b的值也会影响a的值。
 
-c语言的locale.h库
+✨c语言的locale.h库
+
 这个库里面只有俩个方法，一个是用来设定库的locale，另一个是用来取得locale。
 里面还定义了一个结构体，用来取得locale里面的各项信息。
 
 LANG < LC_* < LC_ALL
 
 一般设定LANG就足够了。实在不行的话可以设置LC_ALL，不介意麻烦的话，也可以挨个设置LC_*
+
+✨c语言的assert库
+
+这个库定义的是一个断言。
+当返回值是false，int类型的0，以及NULL的时候，就会调用程序的abort，然后永远不会运行下一行。
+可是调用assert会相当的影响性能。
+因此在调试完成之后，在#include <assert.h>的前面，可以添加#define NDEBUG防止性能低下。
+
