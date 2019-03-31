@@ -38,3 +38,8 @@ limit.h则是定义的关于float之外的常量。
 也可以通过stdio.h的perror或者是string.h的strerror来打印出错误信息。
 EDOM和ERANGE是最基本的两个错误值，EDOM代表运算域，比如负数的根号运算。ERANGE代表的是超过范围，比如int的最大值超过了。
 另外，在POSIX的环境下，额外定义了很多其他的错误值。
+
+✨clipse-cpp-2019-03-R-macosx-cocoa-x86_64.dmg
+c语言用ide安装
+里面可以新建普通的c和c++项目。
+以及cmake项目，还有Arduino项目。
