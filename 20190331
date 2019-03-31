@@ -32,3 +32,9 @@ LANG < LC_* < LC_ALL
 这两个标准库里面定义了很多常量宏
 其中float.h里面定义的是关于float的常量
 limit.h则是定义的关于float之外的常量。
+
+✨c语言的errno.h
+定义了一个external变量，int型的errno。这个变量表示最后一次的错误信息。
+也可以通过stdio.h的perror或者是string.h的strerror来打印出错误信息。
+EDOM和ERANGE是最基本的两个错误值，EDOM代表运算域，比如负数的根号运算。ERANGE代表的是超过范围，比如int的最大值超过了。
+另外，在POSIX的环境下，额外定义了很多其他的错误值。
