@@ -58,3 +58,8 @@ int main(void){
 //
 // This file is part of the GNU ISO C++ Library.  This library is free // 这里显示的是这是个c++的库。
 然而依然可以在c里面调用
+
+c标准库的math.h
+
+HUGE_VAL 这个是库宏，表示的是浮点数的时候，值太过于大或者是太过于小了。
+然后函数的返回值会变成HUGE_VAL或者-HUGE_VAL。
