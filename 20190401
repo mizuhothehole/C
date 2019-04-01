@@ -63,3 +63,44 @@ c标准库的math.h
 
 HUGE_VAL 这个是库宏，表示的是浮点数的时候，值太过于大或者是太过于小了。
 然后函数的返回值会变成HUGE_VAL或者-HUGE_VAL。
+
+/*
+ * Demo.c
+ *
+ *  Created on: 2019/04/01
+ *      Author: ishiiaya
+ */
+
+#include<stdio.h>
+#include<locale.h>
+#include<setjmp.h>
+
+
+static jmp_buf env;
+double divide(double to, double by)
+{
+    if(by == 0)
+        longjmp(env, 1);
+    return to / by;
+}
+
+void f()
+{
+    if (setjmp(env) == 0)
+        divide(2, 0);
+    else
+        printf("Cannot / 0");
+    printf("done");
+}
+
+int main(void){
+	puts(setlocale(LC_ALL, "en_GB"));
+	puts("test");
+	f();
+}
+
+en_GB
+test
+Cannot / 0done
+
+原来，setjmp.h这个头文件是用来做跳转的。
