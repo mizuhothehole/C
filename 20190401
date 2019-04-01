@@ -33,3 +33,28 @@ test
 因为刚刚接触c，那么就慢慢一个一个的接触它的API吧。
 ✨setlocale这个是设置locale的。
 
+今天发现另外一个c的特性就是c可以调用c++的库。
+具体如下：
+/*
+ * Demo.c
+ *
+ *  Created on: 2019/04/01
+ *      Author: ishiiaya
+ */
+
+#include<stdio.h>
+#include<locale.h>
+#include<c++/4.2.1/bitset> //这里调用了c++的库
+
+int main(void){
+	puts(setlocale(LC_ALL, "en_GB"));
+	puts("test");
+}
+
+// <bitset> -*- C++ -*-
+
+// Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006
+// Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free // 这里显示的是这是个c++的库。
+然而依然可以在c里面调用
