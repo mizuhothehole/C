@@ -1,0 +1,35 @@
+CDT系统。
+这个是eclipse下面的C的编译系统。
+我在eclipse(c/c++)上新建了一个项目。
+结果只有一个HelloWorld文件夹。
+这个文件夹下面有一个includes目录。
+然后我的天啊，好多的库。
+
+我要咋创建给文件呢？
+我查了一下网上的文章，新建了一个src文件夹，然后里面写了一个Demo.c文件。
+然后编译，运行。成功了。
+HelloWorld文件夹下面有一个Binaries文件夹。这个下面会生成一个可执行文件。
+右键它，然后点击Run As，就可以运行了。
+
+/*
+ * Demo.c
+ *
+ *  Created on: 2019/04/01
+ *      Author: ishiiaya
+ */
+
+#include<stdio.h>
+#include<locale.h>
+
+int main(void){
+	puts(setlocale(LC_ALL, "en_GB"));
+	puts("test");
+}
+
+我简单创建了一个上面的文件输出了。
+en_GB
+test
+
+因为刚刚接触c，那么就慢慢一个一个的接触它的API吧。
+✨setlocale这个是设置locale的。
+
