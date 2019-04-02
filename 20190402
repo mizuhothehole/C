@@ -45,3 +45,6 @@ main.c:13:26: error: invalid operands to binary + (have ‘char *’ and ‘char
      printf("Hello World" + "aa");
      
 这个错误就可以看出来，运算变成了char*的相加。指针的加法运算只能用数字，所以会出现这个错误。
+
+    person2 kato, *p2; 这个声明了什么？
+    声明了一个结构体，一个结构体指针。
