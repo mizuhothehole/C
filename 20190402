@@ -48,3 +48,16 @@ main.c:13:26: error: invalid operands to binary + (have ‘char *’ and ‘char
 
     person2 kato, *p2; 这个声明了什么？
     声明了一个结构体，一个结构体指针。
+
+c语言当中的宏
+
+#if
+#ifdef 识别子
+#ifndef 识别子
+#else
+#elseif
+#endif
+
+语句中也可以出现：
+define（）
+
