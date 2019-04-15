@@ -1,0 +1,17 @@
+I am using turbo C to do some developments
+
+#include<graphics.h>
+
+void main(void){
+int gdriver = DETECT, gmode; // DETECT means detect display auto. 
+int x1 = 200, y1=200;
+int x2 = 300, y2=300;
+clrscr();                                        // clear context contents and put it to left top.
+
+initgraph(&gdriver, &gmode, "c:\\turboc3\\bgi"); // gdriver is an driver of the display. Such as VGA, CGA and so on.
+                                                 // gmode is the color type. Such as 3 color, 256 color and so on.
+line(x1, y1, x2, y2);
+getch();                                         // keyboard input catching
+closegraph();                                    // close current terminal
+}
+
