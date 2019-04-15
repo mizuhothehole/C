@@ -30,3 +30,5 @@ rectangle(50, 50, 100, 100);
 getch();
 closegraph();
 }
+
+some the graphic driver type and mode infomation is already too old.
