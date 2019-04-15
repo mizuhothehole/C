@@ -15,3 +15,18 @@ getch();                                         // keyboard input catching
 closegraph();                                    // close current terminal
 }
 
+Here is another programming sample showing a rectangle
+
+#include<graphics.h>
+#include<stdio.h>
+#include<conio.h>
+
+void main(void) {
+int gd = DETECT, gm;
+clrscr();
+initgraph(&gd, &gm, "c:\\TURBOC3\\BGI");
+setcolor(BLUE);
+rectangle(50, 50, 100, 100);
+getch();
+closegraph();
+}
